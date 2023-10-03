@@ -1,0 +1,19 @@
+{
+  "name": "martech-components",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chrishanes/martech-components.git"
+  },
+  "author": "Chris Hanes <chris@chrishanes.co.uk>",
+  "license": "GNU",
+  "bugs": {
+    "url": "https://github.com/chrishanes/martech-components/issues"
+  },
+  "homepage": "https://github.com/chrishanes/martech-components#readme"
+}
