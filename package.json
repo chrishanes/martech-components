@@ -1,6 +1,6 @@
 {
   "name": "martech-components",
-  "version": "1.0.0",
+  "version": "1.0.8",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/chrishanes/martech-components/issues"
   },
-  "homepage": "https://github.com/chrishanes/martech-components#readme"
+  "homepage": "https://github.com/chrishanes/martech-components#readme",
+  "devDependencies": {
+    "sass-loader": "^13.3.2",
+    "save-dev": "^0.0.1-security",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4"
+  }
 }
