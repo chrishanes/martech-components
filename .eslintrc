@@ -1,0 +1,68 @@
+{
+	"extends": [
+		"@telegraph-engineering/eslint-config-telegraph",
+		"plugin:jest/recommended",
+		"plugin:cypress/recommended"
+	],
+	"parser": "@babel/eslint-parser",
+	"parserOptions": {
+		"ecmaVersion": 9,
+		"ecmaFeatures": {
+			"globalReturn": true
+		},
+		"sourceType": "module",
+		"allowImportExportEverywhere": true
+	},
+	"plugins": [
+		"jest"
+	],
+	"rules": {
+		"array-bracket-spacing": [
+			"error",
+			"always"
+		],
+		"arrow-parens": [
+			"error",
+			"always"
+		],
+		"no-console": "warn",
+		"no-multi-str": "off",
+		"no-template-curly-in-string": "off",
+		"prefer-const": [
+			"error",
+			{
+				"destructuring": "all"
+			}
+		],
+		"quote-props": [
+			"error",
+			"as-needed"
+		]
+	},
+	"overrides": [
+		{
+			"files": [
+				"*.js"
+			],
+			"globals": {
+				"_satellite": true,
+				"s": true,
+				"window": true,
+				"tmg": true,
+				"user": true,
+				"mbox": true,
+				"martech": true,
+				"adobe": true,
+				"tmgAds": true
+			}
+		},
+		{
+			"files": [
+				"**/*.spec.js"
+			],
+			"env": {
+				"jest": true
+			}
+		}
+	]
+}

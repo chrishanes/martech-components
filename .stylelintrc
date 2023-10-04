@@ -1,0 +1,23 @@
+{
+	"extends": "@telegraph-engineering/stylelint-config-telegraph",
+	"rules": {
+		"selector-max-compound-selectors": 3,
+		"string-quotes": null,
+		"scss/at-import-partial-extension": null,
+		"color-function-notation": null,
+		"keyframes-name-pattern": null,
+		"scss/no-global-function-names": null,
+		"scss/at-mixin-pattern": null,
+		"scss/dollar-variable-pattern": null,
+		"scss/double-slash-comment-whitespace-inside": null,
+		"scss/at-import-no-partial-leading-underscore": null,
+		"declaration-block-no-redundant-longhand-properties": null,
+		"scss/at-mixin-argumentless-call-parentheses": null,
+		"max-line-length": null,
+		"alpha-value-notation": null,
+		"shorthand-property-no-redundant-values": null,
+		"number-max-precision": null,
+		"comment-empty-line-before": null,
+		"no-missing-end-of-source-newline": null
+	}
+}

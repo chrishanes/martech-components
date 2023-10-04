@@ -1,3 +1,3 @@
-import Paywall from "./src/paywall";
+import Paywall from "./src/components/paywall";
 
 export { Paywall }

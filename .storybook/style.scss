@@ -1,0 +1,71 @@
+@import './scss/reset.scss';
+@import './scss/base.scss';
+
+@font-face {
+	font-display: swap;
+	font-family: 'Telesans Text Regular';
+	src: url('./public/fonts/Telesans-Text-Web-Regular.woff2') format('woff2');
+}
+
+// Main Austin News Variable font
+// Basic Chars
+@font-face {
+	font-display: swap;
+	font-family: 'Austin News';
+	font-style: normal;
+	font-weight: 300;
+	src: url('./public/fonts/austin-news-uprights-vf-basic-web.woff2') format('woff2');
+	unicode-range: U+0020-007F, U+00A3, U+00E8, U+00E9, U+2013, U+2014, U+2018, U+2019, U+201C, U+201D, U+2022, U+2026, U+20AC;
+}
+
+// Latin Chars
+@font-face {
+	font-display: swap;
+	font-family: 'Austin News';
+	font-style: normal;
+	font-weight: 300;
+	src: url('./public/fonts/austin-news-uprights-vf-latin1-web.woff2') format('woff2');
+	unicode-range: U+00A1-00A2, U+00A5-00E7, U+00EA-00FF;
+}
+
+// Doric News Variable font
+// Basic Chars
+@font-face {
+	font-display: swap;
+	font-family: 'Doric News';
+	font-style: normal;
+	font-weight: 400;
+	src: url('./public/fonts/doric-news-uprights-vf-basic-web.woff2') format('woff2');
+	unicode-range: U+0020-007F, U+00A3, U+00E8, U+00E9, U+2013, U+2014, U+2018, U+2019, U+201C, U+201D, U+2022, U+2026, U+20AC;
+}
+
+// Latin Chars
+@font-face {
+	font-display: swap;
+	font-family: 'Doric News';
+	font-style: normal;
+	font-weight: 400;
+	src: url('./public/fonts/doric-news-uprights-vf-latin-web.woff2') format('woff2');
+	unicode-range: U+00A1-00A2, U+00A5-00E7, U+00EA-00FF;
+}
+
+// Doric Agate Variable font
+// Basic Chars
+@font-face {
+	font-display: swap;
+	font-family: 'Doric News Agate';
+	font-style: normal;
+	font-weight: 400;
+	src: url('./public/fonts/doric-agate-uprights-vf-basic-web.woff2') format('woff2');
+	unicode-range: U+0020-007F, U+00A3, U+00E8, U+00E9, U+2013, U+2014, U+2018, U+2019, U+201C, U+201D, U+2022, U+2026, U+20AC;
+}
+
+// Latin Chars
+@font-face {
+	font-display: swap;
+	font-family: 'Doric News Agate';
+	font-style: normal;
+	font-weight: 400;
+	src: url('./public/fonts/doric-agate-uprights-vf-latin-web.woff2') format('woff2');
+	unicode-range: U+00A1-00A2, U+00A5-00E7, U+00EA-00FF;
+}

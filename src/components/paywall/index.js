@@ -1,4 +1,4 @@
-import { primaryPaywall } from './_partials/templates';
+import { primaryPaywall, loginPaywall } from './_partials/templates';
 
 class Paywall {
 	constructor ( config ) {
@@ -18,7 +18,6 @@ class Paywall {
 		};
 		this.template = this.getPaywallType( this.config.type );
 		this.paywall = new DOMParser().parseFromString( this.template( this.config.content, this.config.attributes ), 'text/html' ).body.firstElementChild;
-		console.log( 'MARTECH COMPONENT - Paywall', this );
 	}
 
 	init () {
@@ -27,7 +26,8 @@ class Paywall {
 
 	getPaywallType ( paywallKey ) {
 		const paywallTypes = {
-			'primary-paywall': primaryPaywall
+			'primary-paywall': primaryPaywall,
+			'login-paywall': loginPaywall
 		};
 		return paywallTypes[paywallKey];
 	};

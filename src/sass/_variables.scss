@@ -1,0 +1,142 @@
+@import "palette";
+
+$text-color: $color-mine-shaft2;
+$text-black: $color-mine-shaft;
+$text-black2: $color-black;
+$text-grey: $color-gray;
+$text-dark-grey: $color-dove-gray2;
+$text-mid-grey: $color-alto;
+$text-white: $color-white;
+$icon-grey: $color-silver-chalice;
+$visited-grey: $color-boulder; // when link is on a light bg
+$visited-grey-inverse: $color-dusty-grey2; // when link is on a dark bg
+$link-color: $text-black;
+$link-visited: $visited-grey;
+$box-tint: $color-gallery;
+$tint: $color-silver;
+$urgent: $color-persian-red;
+$exclusive: $color-orange-peel;
+$color-badge-hit: $color-regal-blue;
+$color-badge-miss: $color-persian-red;
+$default-accent: $color-elm;
+$sponsored-background-color: $color-alabaster;
+$sponsored-border-color: $color-mercury;
+$sponsored-font-color: $color-dove-gray;
+$sponsored-headline-color: $color-mine-shaft2;
+$color-none: $color-transparent;
+
+// Paywall colors (for overlay version)
+$paywall-blue-1: $color-Lochmara;
+$paywall-blue-2: $color-curious-blue;
+$paywall-blue-3: $color-tropical-blue;
+$paywall-blue-4: $color-alice-blue;
+$paywall-blue-5: $color-allports;
+$paywall-grey-1: $color-mine-shaft3;
+$paywall-grey-2: $color-alto2;
+$paywall-grey-3: $color-alabaster2;
+$paywall-grey-4: $color-mercury2;
+
+// Registration Walls
+$regwall-green-1: $color-black-squeeze2;
+$regwall-green-2: $color-gossamer;
+
+// Premium channel colors
+$premium-color: $color-geebung2;
+$premium-color-2: $color-buttered-rum;
+$premium-color-3: $color-geebung;
+$premium-color-4: $color-bull-shot;
+$premium-box-background: $color-spring-wood;
+$premium-box-text: $color-dawn-pink;
+$premium-color-darker: darken($premium-color, 5);
+
+// Z-Index List
+$z-index-max-minus-one: 2147483646; // NOTE: maximum 32-bit signed integer = 2147483647
+$z-index-max-minus-two: 2147483645;
+$z-index-clashing-modifier: 2147483629;
+$z-index-major-plus: 10001;
+$z-index-major: 10000;
+$z-index-minor: 1000;
+$z-index-min: 100;
+$z-index-tooltip: 9;
+$z-index-base: 1;
+$z-index-negative: -1;
+$z-index-negative-2: -2;
+$z-index-auto: auto;
+$z-index-zero: 0;
+$z-index-negative-two: -2;
+
+//-------------------------- Default spacing ---------------
+$default-space: 16px;
+$default-space-quarter: $default-space / 4; // 4
+$default-space-x0-375: $default-space * 0.375; // 6
+$default-space-half: $default-space / 2; // 8
+$default-space-x0-625: $default-space * 0.625; // 10
+$default-space-three-quarter: $default-space * 3 / 4; // 12
+$default-space-x0-875: $default-space * 0.875; // 14
+$default-space-x1: $default-space; // 16
+$default-space-x1-125: $default-space * 1.125; // 18
+$default-space-x1-25: $default-space * 1.25; // 20
+$default-space-x1-375: $default-space * 1.375; // 22
+$default-space-x1-5: $default-space * 1.5; // 24
+$default-space-x1-625: $default-space * 1.625; // 26
+$default-space-x1-75: $default-space * 1.75; // 28
+$default-space-x1-875: $default-space * 1.875; // 30
+$default-space-x2: $default-space * 2; // 32
+$default-space-x2-125: $default-space * 2.125; // 34
+$default-space-x2-25: $default-space * 2.25; // 36
+$default-space-x2-375: $default-space * 2.375; // 38
+$default-space-x2-5: $default-space * 2.5; // 40
+$default-space-x2-875: $default-space * 2.875; // 46
+$default-space-x3: $default-space * 3; // 48
+$default-space-x3-25: $default-space * 3.5; // 52
+$default-space-x3-5: $default-space * 3.5; // 56
+$default-space-x3-625: $default-space * 3.625; // 58
+$default-space-x4: $default-space * 4; // 64
+$default-space-x4-25: $default-space * 4.25; // 64
+$default-space-x4-5: $default-space * 4.5; // 72
+$default-space-x5: $default-space * 5; // 80
+$default-space-x5-5: $default-space * 5.5; // 88
+$default-space-x5-75: $default-space * 5.75; // 92
+$default-space-x6-375: $default-space * 6.375; // 102
+
+// Media queries breakpoints by device
+// --------------------------------------------------
+// Super small (iPhone 5)
+$screen-xxs: 320px;
+$height-xxs: 568px;
+
+// Extra small screen / phone
+$screen-xs: 480px;
+$screen-xs-min: $screen-xs;
+
+// Small screen / tablet
+$screen-sm: 730px;
+$screen-sm-min: $screen-sm;
+
+// Medium screen / desktop
+$screen-md: 1008px;
+$screen-md-min: $screen-md;
+
+// Large screen / wide desktop
+$screen-lg: 1328px;
+$screen-lg-min: $screen-lg;
+
+// new development breakpoints
+$screen-xxxs-new: 320px;
+$screen-xxs-new: 360px;
+$screen-xs-new: 480px;
+$screen-sm-new: 768px;
+$screen-md-new: 1024px;
+$screen-lg-new: 1280px;
+$screen-xl-new: 1440px;
+$screen-xxl-new: 1536px;
+
+// Media queries breakpoints by ad-server unit
+// --------------------------------------------------
+$adslot-mpu: 300px;
+$adslot-leaderboard: 728px;
+$adslot-billboard: 970px;
+
+// Default Transitions
+$transition-default: 0.2s ease-out;
+$transition-hover: color $transition-default, background-color $transition-default, border-color $transition-default;

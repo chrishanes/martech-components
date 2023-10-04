@@ -1,0 +1,1021 @@
+@import '../../sass/imports.scss';
+
+/**
+ * Due to overflow-x: auto being set on the header on the new article template,
+ * we need to unset it else the page jumps
+ */
+.site-header {
+	overflow-x: unset;
+}
+
+.martech-modal-component-overlay.martech-paywall {
+	z-index: $z-index-major;
+}
+
+.martech-paywall__bold {
+	@include font('Austin News', 'Deck Semibold');
+}
+
+.martech-paywall__display-inverse-xss {
+	@include break-by-width( $screen-xxs-new ) {
+		display: none;
+	}
+}
+
+.martech-paywall__display-inverse-xs {
+	@include break-by-width( $screen-xs-new ) {
+		display: none;
+	}
+}
+
+.martech-paywall__display-inverse-sm {
+	@include break-by-width( $screen-sm-new ) {
+		display: none;
+	}
+}
+
+.martech-paywall__display-sm {
+	display: none;
+
+	@include break-by-width( $screen-sm-new ) {
+		display: block;
+	}
+}
+
+.martech-paywall__display-md {
+	display: none;
+
+	@include break-by-width( $screen-md-new ) {
+		display: block;
+	}
+}
+
+.martech-paywall__inline-block {
+	display: inline-block;
+}
+
+.martech-paywall__underline {
+	position: relative;
+
+	&::after {
+		border-bottom: 1px inset $color-black;
+		bottom: 2px;
+		content: '';
+		display: block;
+		left: 1px;
+		position: absolute;
+		width: calc(100% - 1px);
+	}
+}
+
+.martech-paywall__hidden-item {
+	display: none !important;
+}
+
+$mechanism-z-index: $z-index-major - 2;
+
+.martech-paywall *::selection {
+	background-color: $color-mine-shaft;
+	color: $color-white;
+}
+
+.martech-paywall {
+	background-color: $color-buttermilk;
+	border-color: $color-mine-shaft;
+	border-style: solid;
+	border-width: 1px 0 1px 0;
+	bottom: 0;
+	margin-top: -$default-space;
+	position: sticky;
+	width: 100%;
+	z-index: $mechanism-z-index;
+
+	@include break-by-height( 500px ) {
+		top: -1px;
+	}
+}
+
+.martech-paywall--regwall,
+.martech-paywall--reg-paywall {
+	top: auto;
+}
+
+.martech-paywall--minimise {
+	bottom: -344px;
+	bottom: var(--martech-paywall-bottom-pos);
+}
+
+.martech-paywall--clicked {
+	transition: bottom 0.2s ease-in-out;
+}
+
+.martech-paywall--loggedin {
+	padding-bottom: $default-space;
+}
+
+.martech-paywall__header {
+	padding-bottom: $default-space;
+	padding-top: $default-space;
+}
+
+.martech-paywall__footer {
+	padding-top: $default-space;
+}
+
+.martech-paywall__text-center {
+	margin-bottom: 0;
+	margin-top: 0;
+	text-align: center;
+}
+
+.martech-paywall__bold-underline {
+	text-decoration: underline;
+}
+
+.martech-paywall__paywall-container {
+	margin: 0 auto;
+	max-width: 1536px;
+	padding-bottom: $default-space;
+	padding-left: $default-space-half;
+	padding-right: $default-space-half;
+	width: 100%;
+}
+
+.martech-paywall__main {
+	flex-wrap: nowrap;
+	width: 100%;
+}
+
+.martech-paywall__content {
+	background-color: $color-white;
+	border: 1px solid $color-mine-shaft;
+	border-radius: 8px;
+	padding: $default-space $default-space-half;
+	position: relative;
+	text-align: center;
+
+	@include break-by-width($screen-sm-new) {
+		border-radius: 20px;
+		padding: $default-space-x1-5;
+	}
+}
+
+.martech-paywall__border-top {
+	fill: $color-foam;
+	left: 50%;
+	position: absolute;
+	stroke: $color-mine-shaft;
+	top: -1px;
+	transform: translate(-15px);
+}
+
+.martech-paywall__link,
+.martech-paywall__button {
+	@include font('Doric News', 'UI Regular');
+
+	text-decoration: none;
+}
+
+.martech-paywall__login .martech-paywall__button {
+	padding: $default-space $default-space-x2;
+}
+
+.martech-paywall__footer-text {
+	@include font('Doric News', 'UI Regular');
+
+	color: $color-tundora;
+	font-size: 15px;
+	line-height: 20px;
+	margin: 0;
+	text-align: center;
+}
+
+.martech-paywall__info {
+	@include font('Doric News', 'UI Regular');
+
+	font-size: 17px;
+	line-height: 22px;
+	margin: 0 auto 10px;
+	max-width: 560px;
+
+	&--small {
+		@include font('Doric News', 'UI Regular');
+
+		color: $color-boulder;
+		font-size: 13px;
+		line-height: 16px;
+		margin-bottom: 0;
+		margin-top: $default-space-half;
+		padding-left: $default-space-half;
+		padding-right: $default-space-half;
+	}
+
+	&--strong {
+		@include font('Doric News', 'UI Bold');
+	}
+
+	@include break-by-width($screen-xs-new) {
+		&--small {
+			max-width: 100%;
+		}
+	}
+
+	@include break-by-width($screen-sm-new) {
+		font-size: 19px;
+		line-height: 25px;
+		max-width: 700px;
+
+		&--small {
+			font-size: 13px;
+			line-height: 16px;
+			margin-top: $default-space;
+			max-width: 590px;
+		}
+	}
+}
+
+.martech-paywall__terms {
+	margin-top: 0;
+}
+
+.martech-paywall__info a,
+.martech-paywall__info a:visited {
+	color: $color-mine-shaft;
+	padding: 3px 2px;
+	text-decoration: underline;
+	text-decoration-color: $color-mine-shaft;
+}
+
+.martech-paywall__info a:active,
+.martech-paywall__info a:focus,
+.martech-paywall__info a:hover {
+	background-color: $color-mine-shaft;
+	border-radius: 3px;
+	color: $color-white;
+}
+
+.martech-paywall__link {
+	color: $color-mine-shaft;
+	padding: 3px 2px;
+	text-decoration: underline;
+	text-decoration-color: $color-mine-shaft;
+
+	&:active,
+	&:focus,
+	&:hover {
+		background-color: $color-mine-shaft;
+		border-radius: 3px;
+		color: $color-white;
+	}
+}
+
+.martech-paywall__link.martech-paywall__link--terms {
+	color: $color-boulder;
+	text-decoration: underline;
+	text-decoration-color: $color-boulder;
+
+	&:hover {
+		color: $color-boulder;
+		text-decoration-color: $color-boulder;
+	}
+}
+
+.martech-paywall__main-heading {
+	@include font('Austin News', 'Deck Roman');
+
+	font-size: 16px;
+	line-height: 24px;
+
+	@include break-by-width($screen-sm-new) {
+		font-size: 18px;
+		line-height: 28px;
+	}
+}
+
+.martech-paywall--minimise .martech-paywall__main-heading {
+	cursor: pointer;
+}
+
+.martech-paywall__headline {
+	@include font('Doric News', 'Headline Semibold');
+
+	font-size: 30px;
+	line-height: 36px;
+	margin-bottom: $default-space-half;
+	margin-top: 0;
+
+	@include break-by-width($screen-sm-new) {
+		font-size: 34px;
+	}
+}
+
+.martech-paywall__headline--no-wrap {
+	white-space: nowrap;
+}
+
+.martech-paywall__blur {
+	position: relative;
+
+	&::after {
+		background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 0.7) 31%, $color-white 100%);
+		bottom: -30px;
+		content: '';
+		display: block;
+		height: 60px;
+		position: absolute;
+		width: 100%;
+	}
+}
+
+.martech-paywall__display {
+	&--mobile-sm {
+		display: none;
+
+		@include break-by-width($screen-xxs-new) {
+			display: inline;
+		}
+
+		@include break-by-width($screen-xs-new) {
+			display: none;
+		}
+	}
+}
+
+.martech-paywall--old {
+	margin-bottom: $default-space-x2;
+	margin-left: calc(50% - 50vw);
+	margin-right: calc(50% - 50vw);
+	margin-top: 0;
+	width: 100vw;
+}
+
+// Apply CSS grid styles to browsers that support display:grid
+@supports (display: grid) {
+	.martech-paywall__main {
+		display: grid;
+		grid-gap: 1.6rem;
+		grid-template-columns: repeat(12, 1fr);
+	}
+
+	.martech-paywall__content {
+		grid-column: 1/-1;
+
+		@include break-by-width($screen-sm-new) {
+			grid-column: 2/12;
+		}
+
+		@include break-by-width($screen-lg-new) {
+			grid-column: 3/11;
+		}
+	}
+}
+
+.martech-paywall__tablet-display {
+	display: none;
+
+	.articleRenderer2HTML &,
+	.galleryRendererHTML & {
+		display: none;
+	}
+
+	@include break-by-width( $screen-sm-new ) {
+		display: block;
+	}
+}
+
+.martech-paywall__tablet-display-inline {
+	display: none;
+
+	@include break-by-width( $screen-sm-new ) {
+		display: inline-block;
+	}
+}
+
+.martech-paywall__desktop-display {
+	display: none;
+
+	.articleRenderer2HTML &,
+	.galleryRendererHTML & {
+		display: none;
+	}
+
+	@include break-by-width( $screen-md-new ) {
+		display: block;
+	}
+}
+
+// Reposition Styling ------------------------------- ***/
+
+.martech-paywall__flex {
+	margin-top: $default-space-x2;
+
+	h2 {
+		font-size: 2.2rem;
+	}
+
+	.article-list {
+		display: flex;
+		flex-wrap: wrap;
+
+		.card {
+			padding-bottom: $default-space;
+			padding-right: $default-space;
+			padding-top: $default-space;
+			width: 100%;
+		}
+
+		@include break-by-width($screen-sm-new) {
+			.card {
+				width: 100%;
+			}
+		}
+
+		@include break-by-width($screen-md-new) {
+			.card {
+				width: 50%;
+			}
+
+			.card::after {
+				background-color: $color-alto;
+				content: '';
+				display: inline-block;
+				height: 100%;
+				margin-left: $default-space-half;
+				width: 1px;
+			}
+
+			.card:nth-child(2n)::after {
+				display: none;
+			}
+		}
+
+		@include break-by-width($screen-lg-new) {
+			.card {
+				width: 33%;
+			}
+
+			.card:nth-child(2n)::after {
+				display: inline-block;
+			}
+
+			.card:nth-child(3n)::after {
+				display: none;
+			}
+		}
+	}
+}
+
+.martech-paywall__rhr-container {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: $default-space;
+
+	.commercial-unit {
+		align-self: flex-start;
+		margin-top: $default-space-x2;
+		min-width: 348px;
+		width: 348px;
+	}
+
+	.commercial-unit .advert-label.advert-label--sidebar {
+		margin-left: $default-space-x1-5;
+	}
+
+	.martech-paywall__flex {
+		@include break-by-width($screen-sm) {
+			margin-right: $default-space;
+		}
+	}
+
+	.martech-paywall__flex--old {
+		margin-right: $default-space;
+		margin-top: 0;
+		width: 100%;
+
+		.recommended-articles__items {
+			@include break-by-width($screen-sm) {
+				display: flex;
+				flex-wrap: wrap;
+			}
+		}
+
+		.recommended-articles__item {
+			&-link {
+				max-height: unset;
+			}
+
+			@include break-by-width($screen-sm) {
+				margin-right: $default-space;
+				width: 170px;
+			}
+
+			@include break-by-width($screen-md) {
+				width: 180px;
+			}
+
+			@include break-by-width($screen-lg) {
+				width: 200px;
+			}
+		}
+
+		.html-embed.component {
+			margin-left: 0;
+		}
+	}
+
+	.card__thumbnail {
+		height: 60px;
+		max-height: 60px;
+		max-width: 60px;
+		width: 60px;
+
+		@include break-by-width($screen-sm-new) {
+			height: 70px;
+			max-height: 70px;
+			max-width: 70px;
+			width: 70px;
+		}
+	}
+
+	@include break-by-width($screen-sm-new) {
+		flex-direction: row-reverse;
+	}
+
+	@include break-by-width($screen-md-new) {
+		&.tpl-article__sidebar {
+			position: relative;
+		}
+	}
+}
+
+.martech-paywall__rhr-ads-container {
+	margin-top: $default-space-x2;
+
+	.commercial-unit {
+		margin-top: 0;
+	}
+}
+
+// Due to the nature of the task and having to manipulate the right hand rail, the specificity of selectors unfortunately has to be this deep as there are no UIDs.
+.page-article .martech-paywall__rhr-container--old .article__sidebar-inner.is-sticky {
+	max-width: unset;
+	padding: 0;
+	width: 100%;
+
+	/* stylelint-disable */
+	.component-content {
+		@include break-by-width($screen-sm) {
+			display: flex;
+			flex-direction: row-reverse;
+		}
+	}
+
+	.component-content #advert_tmg_mpu.js-advert {
+		min-width: 300px;
+	}
+	/* stylelint-enable */
+}
+
+.article__sidebar.martech-paywall__rhr-container--old {
+	margin-bottom: 0;
+	margin-left: 0;
+	margin-right: 0;
+	width: 100%;
+}
+
+.articleRenderer2 .martech-paywall__article-center {
+	&--narrow {
+		@include break-by-width($screen-md) {
+			padding: 0;
+			width: 620px;
+		}
+
+		@include break-by-width($screen-lg) {
+			width: 640px;
+		}
+	}
+
+	@include break-by-width($screen-md) {
+		margin: 0 auto;
+	}
+}
+
+// Apply CSS grid styles to browsers that support display:grid
+@supports (display: grid) {
+	.martech-paywall__full-width {
+		@include break-by-width($screen-sm-new) {
+			grid-column: 2/12;
+		}
+
+		@include break-by-width($screen-md-new) {
+			grid-column: 2/10;
+		}
+
+		@include break-by-width($screen-lg-new) {
+			grid-column: 3/10;
+		}
+	}
+}
+
+.martech-paywall--loggedin.martech-paywall--student .martech-paywall__paywall-container {
+	padding-bottom: $default-space-half;
+}
+
+.grecaptcha-badge {
+	visibility: hidden;
+}
+
+// CTA
+
+.martech-paywall__cta-placeholder {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+	@include break-by-width($screen-sm-new) {
+		flex-direction: row;
+	}
+}
+
+// BAU
+
+.martech-paywall__cta-container {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 100%;
+}
+
+.martech-paywall__cta-bau {
+	@include font('Doric News', 'UI Bold');
+
+	align-items: center;
+	background-color: $color-mine-shaft;
+	border: 1px solid $color-black;
+	border-radius: 100px;
+	color: $color-white;
+	display: block;
+	font-size: 15px;
+	letter-spacing: 1px;
+	line-height: 17px;
+	padding: 15px 17px;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	width: 100%;
+
+	&:active,
+	&:focus,
+	&:hover {
+		background-color: $color-white;
+		color: $color-mine-shaft;
+	}
+
+	@include break-by-width($screen-xxs-new) {
+		font-size: 17px;
+		padding: 15px $default-space-x1-5;
+	}
+
+	@include break-by-width($screen-sm-new) {
+		width: 350px;
+	}
+}
+
+// Apple Pay & SWG
+
+.martech-paywall__cta-applepay {
+	--apple-pay-button-width: 100%;
+	--apple-pay-button-height: 50px;
+	--apple-pay-button-border-radius: 100px;
+	--apple-pay-button-padding: 5px 0;
+	--apple-pay-button-box-sizing: border-box;
+}
+
+.martech-paywall__cta-applepay-container,
+.martech-paywall__cta-swg-container {
+	display: flex;
+	margin-bottom: 6px;
+	width: 100%;
+
+	+ .martech-paywall__cta-bau-container {
+		display: flex;
+		margin-top: 6px;
+		width: 100%;
+
+		.martech-paywall__cta-bau {
+			@include font('Doric News', 'Headline Medium');
+
+			background-color: $color-mine-shaft;
+			border: 1px solid $color-mine-shaft;
+			border-radius: 100px;
+			color: $color-white;
+			font-size: 19px;
+			letter-spacing: unset;
+			line-height: 23px;
+			padding: $default-space-three-quarter 26px;
+			text-decoration: none;
+			text-transform: unset;
+			white-space: nowrap;
+			width: 100%;
+
+			&:active,
+			&:focus,
+			&:hover {
+				background-color: $color-white;
+				color: $color-mine-shaft;
+			}
+		}
+
+		@include break-by-width($screen-sm-new) {
+			margin-left: $default-space-half;
+			margin-top: 0;
+			width: 255px;
+		}
+	}
+
+	@include break-by-width($screen-sm-new) {
+		margin-bottom: 0;
+		margin-right: $default-space-half;
+		width: 255px;
+	}
+}
+
+// Gallery Paywall
+
+main.tpl-gallery {
+	padding-bottom: 0;
+}
+
+.martech-login-paywall::before {
+	background:
+		linear-gradient(
+			to bottom,
+			rgba(255, 255, 255, 0) 0,
+			rgba(255, 255, 255, 0.7) 31%,
+			$color-white 100%
+		);
+	content: '';
+	display: block;
+	height: 10rem;
+	position: absolute;
+	top: -10rem;
+	width: 100%;
+}
+
+.martech-login-paywall {
+	padding-bottom: $default-space-half;
+	position: relative;
+	text-align: center;
+
+	.martech-paywall__main-section {
+		margin-left: 6px;
+		margin-right: 6px;
+		margin-top: $default-space-x2;
+		position: relative;
+	}
+
+	.martech-paywall__container {
+		border-bottom-width: 1px;
+		border-color: $color-mine-shaft;
+		border-left-width: 3px;
+		border-right-width: 3px;
+		border-style: solid;
+		border-top-width: 1px;
+		padding: $default-space-x1-5 10px;
+		text-align: center;
+
+		&::before {
+			border-left: 2px solid $color-mine-shaft;
+			content: "";
+			height: 95%;
+			left: -6px;
+			position: absolute;
+			top: 4px;
+		}
+
+		&::after {
+			border-left: 2px solid $color-mine-shaft;
+			content: "";
+			height: 95%;
+			position: absolute;
+			right: -6px;
+			top: 4px;
+		}
+
+		@include break-by-width( $screen-xxs-new ) {
+			padding-left: $default-space;
+			padding-right: $default-space;
+		}
+	}
+
+	.martech-paywall__title {
+		@include font('Austin News', 'Deck Roman');
+
+		color: $color-mine-shaft2;
+		font-size: 16px;
+		font-style: italic;
+		line-height: 19px;
+		margin-bottom: 0;
+		margin-top: 0;
+
+		@include break-by-width($screen-sm-new) {
+			line-height: 22px;
+		}
+	}
+
+	.martech-paywall__headline {
+		@include font('Austin News', 'Deck Semibold');
+
+		color: $color-mine-shaft2;
+		font-size: 19px;
+		line-height: 22px;
+		margin-bottom: $default-space-quarter;
+		margin-top: 0;
+
+		@include break-by-width( $screen-sm-new ) {
+			font-size: 26px;
+			line-height: 30px;
+		}
+	}
+
+	.martech-paywall__excerpt {
+		@include font('Austin News', 'Text Roman');
+
+		font-size: 14px;
+		line-height: 21px;
+		margin-bottom: 0;
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 0;
+
+		&--strong {
+			@include font('Austin News', 'Text Semibold');
+		}
+
+		@include break-by-width($screen-sm-new) {
+			font-size: 16px;
+			line-height: 24px;
+		}
+	}
+
+	a.martech-paywall__cta {
+		@include font('Telesans', 'Text Regular');
+
+		align-self: center;
+		background: $color-sinbad2;
+		border: 1px solid $color-mine-shaft;
+		color: $color-mine-shaft;
+		display: inline-block;
+		font-size: 14px;
+		line-height: 17px;
+		margin-top: $default-space-three-quarter;
+		padding: $default-space-three-quarter $default-space-x2;
+		text-decoration: none;
+		transition: $transition-hover;
+
+		&:active,
+		&:focus,
+		&:visited {
+			background: $color-sinbad2;
+			color: $color-mine-shaft;
+		}
+
+		&:hover {
+			@include break-by-width( $screen-sm-new ) {
+				background: $color-mosque;
+				border-color: $color-mosque;
+				color: $color-white;
+			}
+		}
+
+		@include break-by-width( $screen-sm-new ) {
+			margin-top: $default-space;
+			padding: $default-space $default-space-x3;
+		}
+	}
+
+	.martech-paywall__svg {
+		fill: none;
+		left: 0;
+		margin: auto;
+		position: absolute;
+		right: 0;
+		top: -18px;
+	}
+
+	.martech-paywall__underline {
+		border-bottom: 1px solid $color-mine-shaft;
+	}
+
+	.martech-paywall__mid-section {
+		border-bottom: 1px solid $color-alto;
+		padding-bottom: $default-space-x1-5;
+		padding-left: $default-space;
+		padding-right: $default-space;
+		padding-top: $default-space;
+		text-align: center;
+
+		@include break-by-width( $screen-sm-new ) {
+			padding-bottom: $default-space-x2;
+			padding-top: $default-space-x1-5;
+		}
+	}
+
+	.martech-paywall__bottom-section {
+		padding-top: $default-space;
+		text-align: center;
+	}
+
+	.martech-paywall__title-bottom {
+		color: $color-tundora;
+		line-height: 22px;
+
+		@include break-by-width( $screen-sm-new ) {
+			font-size: 16px;
+		}
+	}
+
+	a.martech-paywall__cta-bottom {
+		background: transparent;
+		border: 0;
+		margin-top: $default-space-quarter;
+		padding: 0;
+
+		&:active,
+		&:focus,
+		&:visited {
+			background: transparent;
+		}
+
+		&:hover {
+			background: transparent;
+			color: $color-mine-shaft;
+			text-decoration: underline;
+		}
+	}
+
+	.martech-paywall__mobile-display {
+		@include break-by-width( $screen-sm-new ) {
+			display: none;
+		}
+	}
+
+	.martech-paywall__desktop-display {
+		display: none;
+
+		@include break-by-width( $screen-sm-new ) {
+			display: block;
+		}
+	}
+
+	.martech-paywall__lg-display {
+		display: none;
+
+		@include break-by-width( $screen-lg-new ) {
+			display: block;
+		}
+	}
+
+	.martech-paywall__info {
+		@include font('Telesans', 'Text Regular');
+
+		font-size: 1.2rem;
+		margin-bottom: 0;
+		margin-top: $default-space;
+	}
+
+	a.martech-paywall__cta-mid {
+		background: transparent;
+		padding-left: $default-space;
+		padding-right: $default-space;
+
+		&:active,
+		&:focus,
+		&:visited {
+			background: transparent;
+		}
+
+		&:hover {
+			@include break-by-width( $screen-sm-new ) {
+				background: $color-mine-shaft;
+				border: 1px solid $color-mine-shaft;
+			}
+		}
+	}
+
+	.martech-paywall__blur {
+		position: relative;
+
+		&::after {
+			background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 0.7) 31%, $color-white 100%);
+			bottom: -30px;
+			content: '';
+			display: block;
+			height: 60px;
+			position: absolute;
+			width: 100%;
+		}
+	}
+}

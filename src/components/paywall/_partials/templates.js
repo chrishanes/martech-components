@@ -1,4 +1,5 @@
-import { redirectTo } from '../../utilities/redirect';
+import { redirectTo } from '../../../utilities/redirect';
+import { bookLine } from '../../../images/bookLine';
 
 const conjunction = ( offer ) => /\?.+=.+/.test( offer ) ? `${offer}&` : `${offer}?`;
 const extraClassInfo = ( attributes ) => attributes.loggedin ? ` martech-paywall--loggedin` : '';
@@ -30,6 +31,33 @@ export const primaryPaywall = ( content, attributes ) => {
 					</div>
 				</main>
 				${primaryPaywallFooter( content, attributes )}
+			</div>
+		</section>`
+	);
+};
+
+/**
+ * Returns the login paywall markup.
+ *
+ * @param {Object} content - the mapped content elements for the markup, produced by BuildData
+ * @param {Object} attributes - the user's and activity's data attributes produced via BuildData component
+ * @returns {string} with login paywall's markup
+ */
+export const loginPaywall = ( content, attributes ) => {
+	return (
+		`<section class="martech-login-paywall ${extraClassInfo( attributes )} site-header__container" data-test="martech-paywall martech-login-paywall" data-js="martech-paywall">
+			<h5 class="martech-paywall__title" data-test="martech-paywall-title">${content.title}</h5>
+			<div class="martech-paywall__main-section">
+				${bookLine( 'martech-paywall__svg' )}
+				<div class="martech-paywall__container">
+					<h6 class="martech-paywall__headline" data-test="martech-paywall-headline">${content.headline}</h6>
+					<p class="martech-paywall__info" data-test="martech-paywall-excerpt">${content.excerpt}</p>
+					<a
+						class="martech-paywall__cta
+						martech-paywall__cta-main"
+						data-test="martech-paywall-login-link"
+						href="${redirectTo( `${conjunction( content.loginLink )}ICID=${content.loginIcid}` )}">${content.loginText}</a>
+				</div>
 			</div>
 		</section>`
 	);

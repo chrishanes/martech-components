@@ -1,0 +1,252 @@
+@keyframes premium-diamond {
+	@include _premium-diamond-keyframes($premium-color-darker);
+}
+
+@keyframes fadeInUp {
+	0% {
+		opacity: 0;
+		transform: translateY($default-space-x1-5);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes loading-button {
+	0% { opacity: 0.4; }
+	100% { opacity: 1; }
+}
+
+@keyframes overlayReveal {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
+
+@keyframes overlayHide {
+	from { opacity: 1; }
+	to { opacity: 0; }
+}
+
+@keyframes overlayRevealFadeIn {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
+
+@keyframes overlayRevealSlideIn {
+	from { transform: translate(0, 100%); }
+	to { transform: translate(0, 0); }
+}
+
+@keyframes overlayRevealSlideUp {
+	from { transform: translate(0, 110%); }
+	to { transform: translate(0, 0); }
+}
+
+@keyframes spinner {
+	from { transform: rotate(0deg); }
+	to { transform: rotate(360deg); }
+}
+
+@keyframes slideDown {
+	from { transform: scale(0.9) translate(0, -100px); }
+	to { transform: scale(1) translate(0, 0); }
+}
+
+@keyframes slideUp {
+	from { transform: translate(0, 0); }
+	to { transform: translate(0, -100px); }
+}
+
+@keyframes followPath {
+	0% { transform: translateX(68px) translateY(72px) rotate(0deg); }
+
+	12% { transform: translateX(3px) translateY(72px) rotate(0deg); }
+
+	20% { transform: translateX(2px) translateY(72px) rotate(90deg); }
+
+	25% { transform: translateX(2px) translateY(72px) rotate(90deg); }
+
+	37% { transform: translateX(2px) translateY(8px) rotate(90deg); }
+
+	45% { transform: translateX(2px) translateY(6px) rotate(180deg); }
+
+	50% { transform: translateX(2px) translateY(6px) rotate(180deg); }
+
+	62% { transform: translateX(66px) translateY(6px) rotate(180deg); }
+
+	70% { transform: translateX(68px) translateY(6px) rotate(270deg); }
+
+	75% { transform: translateX(68px) translateY(6px) rotate(270deg); }
+
+	87% { transform: translateX(68px) translateY(71px) rotate(270deg); }
+
+	95% { transform: translateX(68px) translateY(72px) rotate(1turn); }
+
+	100% { transform: translateX(68px) translateY(72px) rotate(1turn); }
+}
+
+@keyframes scaleItem {
+	0% { transform: scaleX(1); }
+
+	6% { transform: scaleX(4); }
+
+	12% { transform: scaleX(1); }
+
+	25% { transform: scaleX(1); }
+
+	31% { transform: scaleX(4); }
+
+	37% { transform: scaleX(1); }
+
+	50% { transform: scaleX(1); }
+
+	56% { transform: scaleX(4); }
+
+	62% { transform: scaleX(1); }
+
+	75% { transform: scaleX(1); }
+
+	81% { transform: scaleX(4); }
+
+	87% { transform: scaleX(1); }
+
+	100% { transform: scaleX(1); }
+}
+
+@keyframes fadeInFromNone {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes toastSlideInXs {
+	0% {
+		opacity: 0;
+		transform: translateY(-60px);
+	}
+
+	50% {
+		opacity: 1;
+	}
+
+	100% {
+		transform: translateY(0);
+	}
+}
+
+@keyframes toastSlideIn {
+	0% {
+		opacity: 0;
+		transform: translateY(-48px);
+	}
+
+	50% {
+		opacity: 1;
+	}
+
+	100% {
+		transform: translateY(0);
+	}
+}
+
+@keyframes toastSlideOutXs {
+	0% {
+		transform: translateY(0);
+	}
+
+	50% {
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 0;
+		transform: translateY(-60px);
+	}
+}
+
+@keyframes toastSlideOut {
+	0% {
+		transform: translateY(0);
+	}
+
+	50% {
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 0;
+		transform: translateY(-48px);
+	}
+}
+
+@keyframes bounceInLeft {
+	0% {
+		opacity: 1;
+		transform: translateX(-100%);
+	}
+
+	20% {
+		transform: translateX(-75%);
+	}
+
+	40% {
+		transform: translateX(-50%);
+	}
+
+	60% {
+		transform: translateX(-25%);
+	}
+
+	80% {
+		transform: translateX(10%);
+	}
+
+	100% {
+		transform: translateX(0);
+	}
+}
+
+@keyframes bounceInRight {
+	0% {
+		opacity: 1;
+		transform: translateX(100%);
+	}
+
+	20% {
+		transform: translateX(75%);
+	}
+
+	40% {
+		transform: translateX(50%);
+	}
+
+	60% {
+		transform: translateX(25%);
+	}
+
+	80% {
+		transform: translateX(10%);
+	}
+
+	100% {
+		transform: translateX(0);
+	}
+}
+
+@keyframes slideUpMenuTooltip {
+	0% {
+		opacity: 0;
+		transform: translateY(42px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}

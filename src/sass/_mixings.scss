@@ -1,0 +1,114 @@
+@mixin break-by-range($min, $max) {
+	@media only screen and (min-width: $min) and (max-width: $max - 1) {
+		@content;
+	}
+}
+
+@mixin break-by-height($h) {
+	@media only screen and (min-height: $h) {
+		@content;
+	}
+}
+
+@mixin break-by-width($w) {
+	@media only screen and (min-width: $w) {
+		@content;
+	}
+}
+
+/* stylelint-disable */
+@mixin font($family, $variation) {
+	@each $key, $value in $fonts {
+		@if ( $key == $family ) {
+			@each $key, $value in $value {
+				@if ( $key == $variation ) {
+					font-family: unquote(map-get($value, "family"));
+					@if ( map-has-key($value, "variation") ) {
+						font-variation-settings: unquote(map-get($value, "variation"));
+					}
+				}
+			}
+		}
+	}
+}
+/* stylelint-enable */
+
+@mixin change-cta-color($background, $text, $border: transparent) {
+	background-color: $background;
+	border: 1px solid $border;
+	color: $text;
+}
+
+@mixin martech-tmg-container {
+	@include break-by-width($screen-xs) {
+		width: 480px;
+	}
+
+	@include break-by-width($screen-sm) {
+		width: 730px;
+	}
+
+	@include break-by-width($screen-md) {
+		width: 988px;
+	}
+
+	@include break-by-width($screen-lg) {
+		width: 1008px;
+	}
+}
+
+@mixin premium-label() {
+	@include font('Austin News', 'Text Roman');
+
+	color: $premium-color;
+	font-size: 12px;
+	letter-spacing: 0.5px;
+	line-height: 14px;
+	margin-left: 11px;
+	position: relative;
+	text-transform: uppercase;
+
+	&::before {
+		animation: premium-diamond 4s linear 6;
+		animation-iteration-count: infinite;
+		border: 0 solid $premium-color-darker;
+		border-width: 3.5px;
+		content: " ";
+		height: 0;
+		left: -11px;
+		margin-top: 2px;
+		position: absolute;
+		top: 1px;
+		transform: rotate(45deg);
+		width: 0;
+	}
+}
+
+@mixin _premium-diamond-keyframes( $color ) {
+	$color1: rgba($color, 0.2);
+	$color2: rgba($color, 0.5);
+	$color3: rgba($color, 0.6);
+
+	0% { border-color: $color $color1 $color2 $color3; }
+
+	25% { border-color: $color3 $color $color1 $color2; }
+
+	50% { border-color: $color2 $color3 $color $color1; }
+
+	75% { border-color: $color1 $color2 $color3 $color; }
+
+	100% { border-color: $color $color1 $color2 $color3; }
+}
+
+@mixin loading-button() {
+	&::after {
+		animation: loading-button 1.2s linear infinite;
+		animation-direction: alternate;
+		content: attr(data-loading);
+		display: inline-block;
+		left: 50%;
+		position: absolute;
+		top: 50%;
+		transform: translate(-50%, -50%);
+	}
+}

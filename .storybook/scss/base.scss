@@ -1,0 +1,137 @@
+/* stylelint-disable selector-max-type */
+
+@import '../../src/sass/imports.scss';
+
+::selection {
+	background-color: $color-mosque;
+	color: $color-white;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	@include font('Austin News', 'Text Regular');
+
+	color: $color-mine-shaft;
+	display: flex;
+	flex-direction: column;
+	font-size: 1.6rem;
+	-webkit-font-smoothing: antialiased;
+	overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	@include font('Austin News', 'Text Romanbold');
+
+	color: $color-mine-shaft;
+	font-weight: normal;
+	line-height: 1.17;
+	margin-bottom: 0;
+	margin-top: 0;
+}
+
+h1 {
+	font-size: 2.6rem;
+	line-height: 1.17;
+
+	@include break-by-width( $screen-lg-new ) {
+		font-size: 3rem;
+	}
+}
+
+h2 {
+	font-size: 2.2em;
+
+	@include break-by-width($screen-lg-new) {
+		font-size: 2.6rem;
+	}
+}
+
+h3 {
+	font-size: 2.2em;
+
+	@include break-by-width($screen-lg-new) {
+		font-size: 2.4rem;
+	}
+}
+
+h4 {
+	@include font('Austin News', 'Text Regular');
+
+	font-size: 2.2rem;
+
+	@include break-by-width($screen-lg-new) {
+		font-size: 2.4rem;
+	}
+}
+
+h5 {
+	font-size: 2rem;
+
+	@include break-by-width($screen-md-new) {
+		font-size: 1.9rem;
+	}
+
+	@include break-by-width($screen-lg-new) {
+		font-size: 2.2rem;
+	}
+}
+
+h6 {
+	font-size: 1.7rem;
+
+	@include break-by-width($screen-lg-new) {
+		font-size: 1.9rem;
+	}
+}
+
+input,
+button,
+select,
+textarea {
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
+}
+
+blockquote,
+p {
+	@include font('Austin News', 'Text Regular');
+
+	color: $color-mine-shaft2;
+	font-size: 1.7em;
+	line-height: 1.55;
+
+	@include break-by-width($screen-xl-new) {
+		font-size: 1.8rem;
+	}
+}
+
+a {
+	color: inherit;
+	text-decoration-color: $color-mosque;
+
+	&:hover,
+	&:active,
+	&:focus {
+		color: $color-mosque;
+	}
+}
+
+img {
+	display: block;
+	width: 100%;
+}
+
+[aria-hidden="false"][hidden]:focus {
+	// based on the rule from sanitize
+	display: inherit;
+	position: static;
+}

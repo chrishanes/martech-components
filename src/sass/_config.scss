@@ -1,0 +1,16 @@
+/* stylelint-disable */
+$env: 'local' !default;
+$path: false !default;
+$image-root: 'https://localhost:3002/martech/images/' + $path + '/' !default;
+
+@if ($env == 'production') {
+	$image-root: 'https://www.telegraph.co.uk/martech/images/' + $path + '/';
+}
+
+@if ($env == 'preprod') {
+	$image-root: 'https://martech.platforms-preprod-gcp.telegraph.co.uk/martech/images/' + $path + '/';
+}
+
+@if ($env == 'dev') {
+	$image-root: 'https://dev-martech.platforms-preprod-gcp.telegraph.co.uk/martech/images/' + $path + '/';
+}
